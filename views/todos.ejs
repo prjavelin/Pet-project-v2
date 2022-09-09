@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light">
+
+
+    <header class="container-fluid p-0">
+        <%- include('./partials/headerLoggedIn'); %>  
+    </header>
+    <div class="container text-center justify-content-center pt-5">
+
+    <div class="card col-6 mx-auto p-0"> 
+    <h3 class="card-header">You like?</h3>
+    <h2 id="surprise"></h2>
+    <div class="center">
+    <img id="picture" src="" alt="" />
+        
+</div>
+    <h3>Breed</h3>
+    <p id="breed"></p>
+    <h3>Learn More</h3>
+    <p id="more"></p>
+    </div>
+
+    <h2 class="pt-5"> Click left to fav and right to skip?</h2>
+    <button type="button" id="yes">left</button>
+    <button type="button" id="no">right</button>
+
+
+    <h2><%= user.userName %> likes:</h2>
+    <ul>
+        <% todos.forEach( el=> { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %></span>
+                <span class='del'> Delete </span>
+            </li>
+            <% }) %>
+    </ul>
+
+       
+    <!-- <form action="/todos/createTodo" method='POST'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="submit">
+    </form> -->
+
+    <!-- <a href="/logout">Logout</a> -->
+
+   </div>
+    <footer class="fixed-bottom">
+        <%- include('./partials/footer'); %>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+
+    
+</body>
+
+</html>

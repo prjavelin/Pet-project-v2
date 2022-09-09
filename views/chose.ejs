@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('./partials/head'); %>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="container-fluid p-0">
+      <%- include('./partials/headerLoggedIn'); %>  
+  </header>
+    <form action="/chose/createDG" method="POST">
+      <h1>Are you a Dog or Cat person?</h1>
+      <h2></h2>
+      <select name="choose" id="choose" onchange="this.form.submit()">
+        <option>---Choose Dog or Cat---</option>
+        <option>Dog</option>
+        <option>Cat</option>
+      </select>
+    </form>
+    <footer class="fixed-bottom">
+      <%- include('./partials/footer'); %>
+  </footer>
+  </body>
+</html>
